@@ -27,11 +27,11 @@ function createFile(fileName) {
 function convertToSql() {
     var  fileName = process.argv[2];
     if(lodash.isEmpty(fileName)){
-        console.error("Please insert file Name with valid pattern [namespace_locale.properties");
+        console.error("Please insert file Name with valid pattern [namespace_locale.properties]");
         process.exit();
     }
     if(fileName.indexOf("_") < 0){
-        console.error("Please insert file Name with valid pattern [namespace_locale.properties");
+        console.error("Please insert file Name with valid pattern [namespace_locale.properties]");
         process.exit();
     }
     var targetFileName = fileName+'.sql';
@@ -43,7 +43,7 @@ function convertToSql() {
     console.log(namespace +'  ' + local);
     properties.each(function (key, value) {
         if(key.length > 36){
-            console.error("key lenght is "+ key.length + " Key length must be 36 characters or less, key is: " + key)
+            console.error("key lenght is "+ key.length + " Key length must be 36 characters or less,the key is: " + key)
         }
         // console.log("key: " + key + " value: " + value);
         var sqlTmp = `INSERT 
@@ -51,7 +51,7 @@ function convertToSql() {
         (
             '${key}',
             '${value}',
-            'This is sample message for Message Framework from Core with Empty/Null Message text',
+            'This is a key value message for localization dictionary',
             '${namespace}',
             0,
             '${local}'
