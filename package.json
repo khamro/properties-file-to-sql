@@ -1,0 +1,15 @@
+{
+  "name": "properties-to-sql",
+  "version": "1.0.0",
+  "description": "convert properties file dictionary to sql script",
+  "main": "index.js",
+  "scripts": {
+    "convert": "node convertDictToSql.js"
+  },
+  "author": "sajami <sajami@amdocs.com> (sajami@amdocs.com)",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "properties-reader": "0.0.15"
+  }
+}
