@@ -36,7 +36,13 @@ function convertToSql() {
     var properties = PropertiesReader('./'+fileName);
     var fileNameArray = fileName.split('_');
     var namespace = fileNameArray[0];
-    var locale = fileNameArray[1].split('.')[0];
+    var locale;
+    if(fileNameArray.length > 2){
+        locale = fileNameArray[1] + '_' + fileNameArray[2].split('.')[0];
+    }
+    else{
+        locale = fileNameArray[1].split('.')[0];
+    }
     console.log(namespace +'  ' + locale);
     properties.each(function (key, value) {
         if(key.length > 36){
